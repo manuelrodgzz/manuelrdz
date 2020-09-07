@@ -121,6 +121,7 @@ h1{
 }
 
 .certificate-container img{
+    min-width: 150px;
     width: 40%;
     display: block;
     margin: auto;
