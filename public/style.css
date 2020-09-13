@@ -77,9 +77,16 @@ h1{
     color: #C5C3C6;
 }
 
+/*-----projects-container | project-card PC-----*/
+
+.projects-container{
+    display: flex;
+}
+
 .project-card{
-    margin: 1em auto;
-    min-width: 300px;
+    position: relative;
+    margin: 1em 1em;
+    min-width: 250px;
     width: 50%;
     background-color: #DCDCDD;
     color: #46494C;
@@ -91,9 +98,28 @@ h1{
     -moz-box-shadow: 1px 0px 13px 0px rgba(0,0,0,0.75);
     box-shadow: 1px 0px 13px 0px rgba(0,0,0,0.75);
 }
+/*-----------------------------------------------*/
 
-.project-card a{
-    color: #46494C
+/*-----projects-container | project-card MOVIL-----*/
+@media only screen and (max-width: 1094px){
+    .projects-container{
+        display: block;
+    }
+
+    .project-card{
+        margin: 1em auto;
+    }
+}
+/*-----------------------------------------------*/
+
+.url-bottom{
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+}
+
+.url-bottom a{
+    color: #46494C;
 }
 
 .app-img-container{
