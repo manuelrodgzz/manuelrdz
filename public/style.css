@@ -13,6 +13,13 @@ html{
 .main-container{
 }
 
+select{
+    margin: 1em;
+    background-color: #C5C3C6;
+    border: none;
+    border-radius: .5em;
+}
+
 .top{
     width: 100%;
     margin-top: 20%;
@@ -24,7 +31,7 @@ html{
     width: 20%;
     margin: 0 auto;
     left: 40%;
-    top: 1%;
+    top: 8%;
 }
 
 .img-container img{
