@@ -34,6 +34,20 @@ select{
     top: 8%;
 }
 
+@media only screen and (min-height: 800px){
+
+    .img-container{
+        top: 6%;
+    }
+}
+
+@media only screen and (min-height: 1200px){
+
+    .img-container{
+        top: 4%;
+    }
+}
+
 .img-container img{
     display: block;
     max-width: 100%;
