@@ -1,4 +1,4 @@
-let mail = 'hola', domain = 'manuelrdz.com'
+let mail = 'marg.2197', domain = 'gmail.com'
 
 let element = document.getElementById('email')
 
