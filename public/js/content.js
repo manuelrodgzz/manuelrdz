@@ -1,7 +1,7 @@
 var oContent = {
     spanish: {
         aboutTitle: '¿Quién soy?',
-        aboutContent: `Estudiante de 9no semestre de la carrera de 
+        aboutContent: `Egresado de la carrera de 
         Lic. en Tecnologías de la Información en la Universidad Autónoma de Nuevo León y apasionado
         del desarrollo de software.
         <br><br>
@@ -53,7 +53,7 @@ var oContent = {
     },
     english:{
         aboutTitle: 'About me',
-        aboutContent: `Ninth semester student of IT at Universidad Autonoma de Nuevo Leon and software development lover 
+        aboutContent: `Graduate of IT at Universidad Autonoma de Nuevo Leon and software development lover 
         <br><br>
         My aspirations are: 
         <ul>

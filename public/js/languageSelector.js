@@ -22,23 +22,23 @@ const updateHtml = () => {
 
     const selectedLangage = selector.options[selector.selectedIndex].value
 
-    aboutTitle.innerHTML = oContent[selectedLangage].aboutTitle
-    aboutContent.innerHTML = oContent[selectedLangage].aboutContent
+    try { aboutTitle.innerHTML = oContent[selectedLangage].aboutTitle } catch{}
+    try { aboutContent.innerHTML = oContent[selectedLangage].aboutContent } catch{}
 
-    experienceTitle.innerHTML = oContent[selectedLangage].experienceTitle
-    experienceContent.innerHTML = oContent[selectedLangage].experienceContent
+    try { experienceTitle.innerHTML = oContent[selectedLangage].experienceTitle } catch{}
+    try { experienceContent.innerHTML = oContent[selectedLangage].experienceContent } catch{}
 
-    projectsTitle.innerHTML = oContent[selectedLangage].projectsTitle
-    projectsMessage.innerHTML = oContent[selectedLangage].projectsMessage
+    try { projectsTitle.innerHTML = oContent[selectedLangage].projectsTitle } catch{}
+    try { projectsMessage.innerHTML = oContent[selectedLangage].projectsMessage } catch{}
 
-    projectTitle1.innerHTML = oContent[selectedLangage].projectTitle1
-    projectContent1.innerHTML = oContent[selectedLangage].projectContent1
-    projectTitle2.innerHTML = oContent[selectedLangage].projectTitle2
-    projectContent2.innerHTML = oContent[selectedLangage].projectContent2
-    projectTitle3.innerHTML = oContent[selectedLangage].projectTitle3
-    projectContent3.innerHTML = oContent[selectedLangage].projectContent3
+    try { projectTitle1.innerHTML = oContent[selectedLangage].projectTitle1 } catch{}
+    try { projectContent1.innerHTML = oContent[selectedLangage].projectContent1 } catch{}
+    try { projectTitle2.innerHTML = oContent[selectedLangage].projectTitle2 } catch{}
+    try { projectContent2.innerHTML = oContent[selectedLangage].projectContent2 } catch{}
+    try { projectTitle3.innerHTML = oContent[selectedLangage].projectTitle3 } catch{}
+    try { projectContent3.innerHTML = oContent[selectedLangage].projectContent3 } catch{}
 
-    contact.innerHTML = oContent[selectedLangage].contact
+    try { contact.innerHTML = oContent[selectedLangage].contact } catch{}
 }
 
 selector.addEventListener('change', updateHtml)
