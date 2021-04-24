@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 
 const projects = () => {
     return (
-        <Layout>
+        <Layout pageName='Projects'>
             <Container>
                 <Block title='Demos'>
                 <div className='mb-12'>

@@ -1,5 +1,4 @@
 import {GetServerSideProps} from 'next'
-import Head from 'next/head'
 import Me from '../components/Me'
 import Container from '../components/Container'
 import Layout from '../components/Layout'
@@ -21,10 +20,7 @@ interface Props {
 
 export default function Home({repos, languages}: Props) {
   return (
-    <Layout>
-      <Head>
-        <title>{'<'}Manuel{'/>'}</title>
-      </Head>
+    <Layout pageName='Home'>
 
       <Me />
 
