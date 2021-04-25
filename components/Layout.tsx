@@ -18,8 +18,8 @@ const Layout = ({children, pageName}: Props) => {
                 <Navbar />
             </div>
             <div className='bg-gradient-to-b from-blue-900 via-gray-800 to-gray-800'>
-            {children}
-            <Footer />
+                {children}
+                <Footer />
             </div>
         </div>
     )

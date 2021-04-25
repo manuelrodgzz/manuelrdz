@@ -12,6 +12,8 @@ import RepoCard from '../components/RepoCard'
 import { RepoLanguages } from '../types'
 import { AllRepoLanguages } from '../types/index';
 import Technologies from '../components/Technologies'
+import { useContext } from 'react'
+import { ContentContext } from '../context/SiteContent'
 
 interface Props {
   repos: StarredRepo[],
@@ -19,24 +21,34 @@ interface Props {
 }
 
 export default function Home({repos, languages}: Props) {
+
+  const {currentLanguage, content: {index: content}} = useContext(ContentContext)
+
   return (
     <Layout pageName='Home'>
 
       <Me />
 
       <Container>
-        <Block title='About me'>
-          Egresé de la Univesidad Autónoma de Nuevo León en el año 2021 como lic. en tecnologías de la información.
-          Durante la pandemia me dí cuenta de la enorme cantidad de cursos sobre desarrollo de software que podía encontrar 
-          en plataformas como Udemy y YouTube.
+        <Block title={content.aboutTitle}>
+          {content.aboutContent}
         </Block>
 
-        <Block title='Technologies'>
+        <Block title={content.technologiesTitle}>
           <Technologies />
         </Block>
 
-        <Block title='Pinned repos'>
-            <Slider dots={true} infinite={true} slidesToShow={1} slidesToScroll={1} className='py-8 lg:py-24 h-3/5 w-4/5 mx-auto shadow-xl' arrows draggable dotsClass='custom-dot' >
+        <Block title={content.pinnedReposTitle}>
+            <Slider 
+              dots={true} 
+              infinite={true} 
+              slidesToShow={1} 
+              slidesToScroll={1} 
+              className='py-8 lg:py-24 h-3/5 w-4/5 mx-auto shadow-xl' 
+              arrows={false} 
+              draggable 
+              dotsClass='custom-dot'
+            >
               {repos.map(repo => (
                 <RepoCard key={'repocard' + repo.id} repo={repo} languages={languages[repo.name]}/>
               ))}

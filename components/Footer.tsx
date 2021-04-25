@@ -12,7 +12,7 @@ const Footer = () => {
                 </ul>                
             </div>
             <div className='flex flex-col justify-center text-center'>
-                <span>Manuel Rodríguez - {new Date().getFullYear()}</span>
+                <span>Manuel Rodríguez <br/> {new Date().getFullYear()}</span>
             </div>
         </div>
     )

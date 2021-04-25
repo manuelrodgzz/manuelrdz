@@ -3,7 +3,7 @@ import Title from './Title'
 
 interface Props {
     title: string,
-    children: JSX.Element | JSX.Element[] | string | (JSX.Element | string)[]
+    children: any
 }
 
 const Block = ({title, children}: Props) => {

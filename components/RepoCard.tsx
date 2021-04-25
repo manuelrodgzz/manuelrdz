@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faGithub, faJsSquare, faCss3, faHtml5, faReact, faNodeJs} from '@fortawesome/free-brands-svg-icons'
 import { RepoLanguages } from '../types/index';
 import colors from '../utils/colors'
+import Button from './Button';
 
 interface Props {
     repo: StarredRepo,
@@ -44,21 +45,26 @@ const RepoCard = ({repo, languages}: Props) => {
                 {repo.description}
                 <br/>
 
-                <div className='mt-10 underline text-blue-900'>
-                    <a target='_blank' href={repo.html_url}>Repo URL</a>
-                </div>
+                {/* <div className='mt-10 text-white'>
+                    
+                </div> */}
             </div>
-            <div className='flex justify-end'>
-                {
-                    Object.keys(languages).map(language => (
-                        //@ts-ignore                        
-                        <FontAwesomeIcon key={'repocard-icon' + repo.id + language} icon={icons[language].icon} className={`${icons[language].color} text-3xl mr-3`}/>
-                    ))
-                }
+            <div className='flex flex-col-reverse sm:flex-row'>
+                <div className='flex justify-center mt-3 sm:w-1/4 sm:m-0'>
+                    <Button text='Visit repo' href={repo.html_url}/>
+                </div>
+                <div className='flex items-center justify-center sm:justify-end sm:w-3/4'>
+                    {
+                        Object.keys(languages).map(language => (
+                            //@ts-ignore                        
+                            <FontAwesomeIcon key={'repocard-icon' + repo.id + language} icon={icons[language].icon} className={`${icons[language].color} text-3xl mr-3`}/>
+                        ))
+                    }
 
-                {
-                    renderFrameworkIcon()
-                }
+                    {
+                        renderFrameworkIcon()
+                    }
+                </div>
             </div>
         </div>
     )

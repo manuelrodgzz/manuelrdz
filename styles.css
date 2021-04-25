@@ -53,6 +53,6 @@ body {
 }
 
 .custom-dot li button:hover, .custom-dot li button:focus {
-    background: rgba(247, 34, 34, 0.8);
+    background: #93C5FD;
     outline: 0;
 }

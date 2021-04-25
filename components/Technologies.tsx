@@ -19,8 +19,8 @@ const technologies = [
         text: 'Javascript'
     },
     {
-        component: <FontAwesomeIcon icon={faReact} className={`text-5xl ${colors.React}`}/>,
-        text: 'React'
+        component: <IconTs />,
+        text: 'Typescript'
     },
     {
         component: <FontAwesomeIcon icon={faHtml5} className={`text-5xl ${colors.HTML}`}/>,
@@ -28,15 +28,19 @@ const technologies = [
     },
     {
         component: <FontAwesomeIcon icon={faCss3} className={`text-5xl ${colors.CSS}`}/>,
-        text: 'Css'
+        text: 'CSS'
     },
     {
-        component: <IconTs />,
-        text: 'Typescript'
+        component: <FontAwesomeIcon icon={faReact} className={`text-5xl ${colors.React}`}/>,
+        text: 'React'
     },
     {
         component: <IconGraphQL />,
         text: 'GraphQL'
+    },
+    {
+        component: <FontAwesomeIcon icon={faNodeJs} className={`text-5xl ${colors.Node}`}/>,
+        text: 'Node JS'
     },
     {
         component: <IconSQL />,
@@ -46,10 +50,6 @@ const technologies = [
         component: <IconCSharp/>,
         text: 'C#'
     },
-    {
-        component: <FontAwesomeIcon icon={faNodeJs} className={`text-5xl ${colors.Node}`}/>,
-        text: 'Node JS'
-    },
 ]
 
 const Technologies = () => {
@@ -57,9 +57,11 @@ const Technologies = () => {
         <div className='grid grid-cols-4 gap-6'>
 
             {technologies.map(tech => (
-                <div key={'technology' + tech.text} className='px-auto flex'>
+                <div key={'technology' + tech.text} className='flex mt-2'>
                     <div className='mx-auto inline-block text-center'>
-                        {tech.component}
+                        <div className='flex justify-center'>
+                            {tech.component}
+                        </div>
                         <br/>
                         {tech.text}
                     </div>
