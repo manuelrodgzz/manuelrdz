@@ -14,7 +14,7 @@ const Me = () => {
                     <div className='mx-auto h-40 w-40 lg:h-64 lg:w-64 rounded-full mx-auto flex bg-blue-800 m-auto'>
                         {/* Image container */}
                         <div className='relative h-32 w-32 lg:h-56 lg:w-56 m-auto'>
-                            <Image src='/img/me.jpeg' alt='me' layout='fill' className='rounded-full'/>
+                            <img src='/img/me.jpeg' alt='me' className='rounded-full'/>
                         </div>
                     </div>
                 </div>

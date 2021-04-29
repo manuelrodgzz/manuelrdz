@@ -1,4 +1,4 @@
-import {GetServerSideProps} from 'next'
+import { GetStaticProps } from 'next'
 import Me from '../components/Me'
 import Container from '../components/Container'
 import Layout from '../components/Layout'
@@ -60,7 +60,7 @@ export default function Home({repos, languages}: Props) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
 
   const requestConfig = {
     auth: {
