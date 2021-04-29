@@ -56,3 +56,21 @@ body {
     background: #93C5FD;
     outline: 0;
 }
+
+.sidebar-background {
+    transition: opacity 300ms ease-in-out;
+}
+
+.show {
+    transform: translateX(-75vw);
+}
+
+.show2 {
+    transform: translateX(-75vw);
+}
+
+.sidebar{
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+}

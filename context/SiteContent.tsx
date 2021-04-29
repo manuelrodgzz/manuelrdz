@@ -14,6 +14,17 @@ const SiteContentProvider = ({children}: any) => {
 
     const [currentLanguage, setCurrentLanguage] = useState<keyof Translation>('english')
     const [content, setContent] = useState<SiteContent>({
+        nav: {
+            home: {
+                text: siteContent.nav.home.text[currentLanguage],
+                path: siteContent.nav.home.path
+            },
+            projects: {
+                text: siteContent.nav.projects.text[currentLanguage],
+                path: siteContent.nav.projects.path
+            }
+            
+        },
         index: {
             aboutTitle: siteContent.index.aboutTitle[currentLanguage],
             aboutContent: siteContent.index.aboutContent[currentLanguage],
@@ -35,6 +46,17 @@ const SiteContentProvider = ({children}: any) => {
 
     useEffect(() => {
         setContent({
+            nav: {
+                home: {
+                    ...siteContent.nav.home,
+                    text: siteContent.nav.home.text[currentLanguage]
+                },
+                projects: {
+                    ...siteContent.nav.projects,
+                    text: siteContent.nav.projects.text[currentLanguage]
+                }
+                
+            },
             index: {
                 aboutTitle: siteContent.index.aboutTitle[currentLanguage],
                 aboutContent: siteContent.index.aboutContent[currentLanguage],

@@ -12,7 +12,7 @@ const Block = ({title, children}: Props) => {
             <Title>{title}</Title>
             {
                 typeof children === 'string'
-                    ? <p>{children}</p>
+                    ? children.split('\n').map((sentence, index) => (<p key={title + index}>{sentence}</p>))
                     : children
             }
         </div>

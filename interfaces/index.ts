@@ -20,6 +20,16 @@ interface DemoCard {
 }
 
 export interface SiteContentMap {
+    nav: {
+        home: {
+            text: Translation,
+            path: string
+        },
+        projects: {
+            text: Translation
+            path: string
+        }
+    }
     index: {
         aboutTitle: Translation,
         aboutContent: Translation,
@@ -35,6 +45,16 @@ export interface SiteContentMap {
 }
 
 export interface SiteContent {
+    nav: {
+        home: {
+            text: string,
+            path: string
+        },
+        projects: {
+            text: string
+            path: string
+        }
+    }
     index: {
         aboutTitle: string,
         aboutContent: string,

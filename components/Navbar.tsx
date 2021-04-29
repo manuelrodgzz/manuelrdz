@@ -1,25 +1,42 @@
-import React, { useContext } from 'react'
-import Link from 'next/link'
-import { ContentContext } from '../context/SiteContent'
+import React, { useState } from 'react'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faBars} from '@fortawesome/free-solid-svg-icons'
+import PagesList from './PagesList';
+import LanguageSelector from './LanguageSelector';
 
 const Navbar = () => {
 
-    const {currentLanguage, setCurrentLanguage} = useContext(ContentContext)
+    const [showSidebar, setShowSidebar] = useState(false)
 
-    return (
-        <div className='w-full h-24 bg-blue-900 flex justify-end items-center rounded-b-full shadow-lg'>
-            <ul className='flex space-x-10 text-xl mx-auto'>
-                <li><Link href='/'>Home</Link></li>
-                <li><Link href='/projects'>Projects</Link></li>
-            </ul>
-            <div className='absolute mr-24'>
-                <select className='rounded-lg shadow-lg bg-blue-700' onChange={(e) => setCurrentLanguage(e.target.value as 'spanish' | 'english')}>
-                    <option value='english'>English</option>
-                    <option value='spanish'>Español</option>
-                </select>
+    const nav = () => (
+        <div className='relative w-full md:h-24 md:bg-blue-900 md:rounded-b-full justify-center items-center md:shadow-lg'>
+            <div className='hidden md:flex h-full justify-center items-center'>
+                <PagesList ulClassName='flex space-x-10 text-xl'/>
+                <LanguageSelector />
             </div>
+
+            <div className='md:hidden fixed flex right-5 top-10 bg-blue-900 rounded-full shadow-lg h-10 w-10 justify-center items-center z-20' onClick={() => setShowSidebar(!showSidebar)}>
+                <FontAwesomeIcon icon={faBars}/>
+            </div>
+
+
+            <div className={`justify-end md:hidden fixed sidebar-background ${showSidebar ? 'flex bg-black opacity-25' : 'hidden'} shadow-lg h-full w-screen h-screen z-10`} onClick={() => setShowSidebar(false)}>
+            </div>
+            {/* Sidebar working wihout black backgrund */}
+            <div className={`inline-block md:hidden fixed bg-blue-900 shadow-lg h-full w-3/4 pt-20 h-screen left-full ml-1/4 sidebar ${showSidebar && 'show'} z-10`}>
+                <PagesList liClassName='text-center mt-2'/>
+                <LanguageSelector />
+            </div>
+
+            {/* This only works inside of sidebar background div */}
+            {/* <div className={`absolute bg-blue-900 h-full w-3/4 pt-20 sidebar ${showSidebar && 'show2'} left-full ml-1/4`} onClick={(e) => e.stopPropagation()}>
+                <PagesList liClassName='text-center mt-2'/>
+                <LanguageSelector />
+            </div> */}
         </div>
     )
+ 
+    return nav()
 }
 
 export default Navbar

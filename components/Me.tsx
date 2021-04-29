@@ -19,9 +19,9 @@ const Me = () => {
                     </div>
                 </div>
 
-                <span className='title-glow text-2xl lg:text-6xl'>MANUEL RODRÍGUEZ</span>
+                <span className='title-glow text-4xl lg:text-6xl'>MANUEL RODRÍGUEZ</span>
 
-                <ul className='w-1/5 my-5 mx-auto inline-block flex justify-around'>
+                <ul className='w-2/5 md:w-1/5 my-5 mx-auto flex justify-around'>
                     <li>
                         <a target='_blank' href='https://www.linkedin.com/in/manuelrodgzz/'>
                             <FontAwesomeIcon icon={faLinkedin} size='lg' className='hover:text-blue-700 cursor-pointer '/>
