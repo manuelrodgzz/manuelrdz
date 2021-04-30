@@ -22,11 +22,11 @@ const Demo = ({imageSrc, imageAlt, children, reverse, title, demoUrl}: Props) =>
                     <img src={imageSrc} alt={imageAlt} loading='lazy'  className='rounded-lg object-scale-down'/>
                 </div>
                 
-                <div className={`lg:w-3/5 md:w-2/5 md:p${reverse ? 'r' : 'l'}-16 my-auto`}>
+                <div className={`lg:w-3/5 md:w-2/5 ${reverse ? 'md:pr-16' : 'md:pl-16'} my-auto`}>
                         {children}
                 </div>
             </div>
-            <div className={`flex justify-center md:${!reverse ? 'justify-end' : 'justify-start'}`}>
+            <div className={`flex justify-center ${!reverse ? 'md:justify-end' : 'md:justify-start'}`}>
                 <Button text='Live demo' href={demoUrl} className='m-5'/>
             </div>
         </div>
