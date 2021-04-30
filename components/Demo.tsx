@@ -18,8 +18,8 @@ const Demo = ({imageSrc, imageAlt, children, reverse, title, demoUrl}: Props) =>
                 <span>{title}</span>
             </div>
             <div className={`md:flex ${reverse && 'flex-row-reverse'} items-end justify-between mb-14`}>
-                <div className='flex justify-center mb-5 lg:w-2/5 lg:h-80 md:w-3/5 md:h-80'>
-                    <img src={imageSrc} alt={imageAlt} width={420} height={250}  className='rounded-lg'/>
+                <div className=' justify-center mb-5 lg:w-2/5 md:w-3/5'>
+                    <img src={imageSrc} alt={imageAlt} loading='lazy'  className='rounded-lg object-scale-down'/>
                 </div>
                 
                 <div className={`lg:w-3/5 md:w-2/5 md:p${reverse ? 'r' : 'l'}-16 my-auto`}>
