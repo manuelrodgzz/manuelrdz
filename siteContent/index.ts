@@ -24,9 +24,9 @@ const siteContent: SiteContentMap = {
         },
         aboutContent: {
             spanish: `Mi primer contacto con la programación fue en una clase de la preparatoria; recuerdo tener esa sesación de satisfacción al solucionar los ejercicios que el profesor nos asignaba. Fue a partir de ahí quise aprender más acerca del desarrollo de software, por lo que decidí estudiar una carrera de TI.
-            Egresé de la Univesidad Autónoma de Nuevo León en el año 2021 como lic. en tecnologías de la información pero mientras cursaba la carrera y hasta la fecha he estado descurbiendo y aprendiendo nuevos lenguajes y frameworks de desarrollo de software que me han permitido conocer distintas estrategias para dar solución a un problema.`,
+            Egresé de la Univesidad Autónoma de Nuevo León en el año 2021 como lic. en tecnologías de la información pero mientras cursaba la carrera y hasta la fecha he estado descubriendo y aprendiendo nuevos lenguajes y frameworks de desarrollo de software que me han permitido conocer distintas estrategias para dar solución a un problema.`,
             english: `The first contact I had with programming was in a highschool subject; I remember having that satisfaction feeling while I was solving the excercises that the professor assigned to my classmates and me. Since then I knew I wanted to learn more about software development, so I decided to study an IT university degree.
-            I graduated from the Universidad Autónoma de Nuevo León in 2021 with an IT bachelor degree but since I was in studying and until until now I've been finding out and learning new programming languages and frameworks. That has allowed me to know new strategies for solving problems`
+            I graduated from the Universidad Autónoma de Nuevo León in 2021 with an IT bachelor degree but since I was in studying and until until now I've been finding out and learning new programming languages and frameworks. That has allowed me to know new strategies to solve problems`
         },
         technologiesTitle: {
             spanish: 'Tecnologías',
