@@ -101,7 +101,7 @@ const siteContent: SiteContentMap = {
                     spanish: 'Probar demo',
                     english: 'Live demo'
                 },
-                liveDemoUrl: 'http://marg-react-chat.herokuapp.com/login'
+                liveDemoUrl: 'https://manuelrdz-chat-react.web.app/'
             }
         ]
     }
