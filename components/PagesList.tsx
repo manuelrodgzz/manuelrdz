@@ -15,7 +15,7 @@ const PagesList = ({ulClassName, liClassName}: Props) => {
         <ul className={ulClassName}>
             {
                 Object.values(nav).map((page) => (
-                    <li key={page.path} className={liClassName}><Link href={page.path} as={page.path}>{page.text}</Link></li>
+                    <li key={page.path} className={liClassName}><Link href={page.path}>{page.text}</Link></li>
                 ))
             }
         </ul>
