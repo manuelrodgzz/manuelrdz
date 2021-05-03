@@ -18,7 +18,7 @@ const projects = () => {
                 </div>
                 {
                     content.demos.map((demo, index) => (
-                    <Demo key={demo.liveDemoUrl} reverse={(index + 1) % 2 === 0} imageSrc={demo.imageUrl} demoUrl={demo.liveDemoUrl} title={demo.title}>
+                    <Demo key={demo.liveDemoUrl} reverse={(index + 1) % 2 === 0} imageSrc={demo.imageUrl} demoUrl={demo.liveDemoUrl} title={demo.title} demoButtonText={demo.demoButtonText}>
                         {demo.description.split('\n').map((sentence, idx) => <p key={demo.title + 'sentence' + idx}>{sentence}</p>)}
                     </Demo>
                     ))

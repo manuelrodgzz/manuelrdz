@@ -58,7 +58,7 @@ const siteContent: SiteContentMap = {
                 },
                 description: {
                     spanish: 'Aplicación con interfaz gráfica similar a tiktok y que permite deslizar entre videos, pausar y silenciar el video.',
-                    english: 'Application with similar graphic user interface as Tiktok that allows to swipe, pause and silence videos'
+                    english: 'Application with similar user interface to Tiktok that allows to swipe, pause and silence videos'
                 },
                 imageUrl: '/img/tiktok-clone.png',
                 demoButtonText: {

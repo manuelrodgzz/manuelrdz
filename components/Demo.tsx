@@ -6,12 +6,13 @@ interface Props {
     imageSrc: string,
     children: string | (string | JSX.Element)[]
     title: string
-    demoUrl: string
+    demoUrl: string,
+    demoButtonText: string,
     imageAlt?: string
     reverse?: boolean
 }
 
-const Demo = ({imageSrc, imageAlt, children, reverse, title, demoUrl}: Props) => {
+const Demo = ({imageSrc, imageAlt, children, reverse, title, demoUrl, demoButtonText}: Props) => {
     return (
         <div className=' shadow-2xl rounded-lg p-5'>
             <div className='my-5 text-2xl text-center demo-title'>
@@ -27,7 +28,7 @@ const Demo = ({imageSrc, imageAlt, children, reverse, title, demoUrl}: Props) =>
                 </div>
             </div>
             <div className={`flex justify-center ${!reverse ? 'md:justify-end' : 'md:justify-start'}`}>
-                <Button text='Live demo' href={demoUrl} className='m-5'/>
+                <Button text={demoButtonText} href={demoUrl} className='m-5'/>
             </div>
         </div>
     )
