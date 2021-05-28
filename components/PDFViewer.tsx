@@ -41,7 +41,6 @@ const PDFViewer = () => {
             </div>
 
             <div className='md:hidden flex flex-col items-center'>
-                <Button text={resume.resumeButton} href={'/' + fileName} className='my-5'/>
                 <DownloadButton />
             </div>
         </>
