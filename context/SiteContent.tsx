@@ -1,5 +1,6 @@
-import React, { createContext, useEffect, useRef, useState } from 'react'
-import { SiteContent, Translation } from '../interfaces'
+import React, { createContext, useEffect, useState } from 'react'
+import { Translation } from '../interfaces/index';
+import { SiteContentMap, SiteContent } from '../types/index';
 import siteContent from '../siteContent'
 
 interface SiteContextState {
@@ -8,75 +9,46 @@ interface SiteContextState {
     content: SiteContent
 }
 
+const getContent = (siteContent: SiteContentMap, currentLanguage: keyof Translation) => ({
+    nav: Object.fromEntries(
+        Object.keys(siteContent.nav).map(
+            pageName => [pageName, {...siteContent.nav[pageName], text: siteContent.nav[pageName].text[currentLanguage]}]
+        )
+    ),
+    index: {
+        aboutTitle: siteContent.index.aboutTitle[currentLanguage],
+        aboutContent: siteContent.index.aboutContent[currentLanguage],
+        technologiesTitle: siteContent.index.technologiesTitle[currentLanguage],
+        pinnedReposTitle: siteContent.index.pinnedReposTitle[currentLanguage],
+        repoCardButtonText: siteContent.index.repoCardButtonText[currentLanguage]
+    },
+    projects: {
+        demosTitle: siteContent.projects.demosTitle[currentLanguage],
+        demosContent: siteContent.projects.demosContent[currentLanguage],
+        demos: siteContent.projects.demos.map(demo => ({
+            ...demo,
+            title: demo.title[currentLanguage],
+            description: demo.description[currentLanguage],
+            demoButtonText: demo.demoButtonText[currentLanguage]
+        }))
+    },
+    resume: {
+        title: siteContent.resume.title[currentLanguage],
+        downloadButton: siteContent.resume.downloadButton[currentLanguage],
+        resumeButton: siteContent.resume.resumeButton[currentLanguage]
+    }
+})
+
 export const ContentContext = createContext<SiteContextState>({} as SiteContextState)
 
 const SiteContentProvider = ({children}: any) => {
 
     const [currentLanguage, setCurrentLanguage] = useState<keyof Translation>('english')
-    const [content, setContent] = useState<SiteContent>({
-        nav: {
-            home: {
-                text: siteContent.nav.home.text[currentLanguage],
-                path: siteContent.nav.home.path
-            },
-            projects: {
-                text: siteContent.nav.projects.text[currentLanguage],
-                path: siteContent.nav.projects.path
-            }
-            
-        },
-        index: {
-            aboutTitle: siteContent.index.aboutTitle[currentLanguage],
-            aboutContent: siteContent.index.aboutContent[currentLanguage],
-            technologiesTitle: siteContent.index.technologiesTitle[currentLanguage],
-            pinnedReposTitle: siteContent.index.pinnedReposTitle[currentLanguage],
-            repoCardButtonText: siteContent.index.repoCardButtonText[currentLanguage]
-        },
-        projects: {
-            demosTitle: siteContent.projects.demosTitle[currentLanguage],
-            demosContent: siteContent.projects.demosContent[currentLanguage],
-            demos: siteContent.projects.demos.map(demo => ({
-                ...demo,
-                title: demo.title[currentLanguage],
-                description: demo.description[currentLanguage],
-                demoButtonText: demo.demoButtonText[currentLanguage]
-            }))
-        }
-    })
-
+    const [content, setContent] = useState<SiteContent>(getContent(siteContent, currentLanguage))
+    
     useEffect(() => {
-        setContent({
-            nav: {
-                home: {
-                    ...siteContent.nav.home,
-                    text: siteContent.nav.home.text[currentLanguage]
-                },
-                projects: {
-                    ...siteContent.nav.projects,
-                    text: siteContent.nav.projects.text[currentLanguage]
-                }
-                
-            },
-            index: {
-                aboutTitle: siteContent.index.aboutTitle[currentLanguage],
-                aboutContent: siteContent.index.aboutContent[currentLanguage],
-                technologiesTitle: siteContent.index.technologiesTitle[currentLanguage],
-                pinnedReposTitle: siteContent.index.pinnedReposTitle[currentLanguage],
-                repoCardButtonText: siteContent.index.repoCardButtonText[currentLanguage]
-            },
-            projects: {
-                demosTitle: siteContent.projects.demosTitle[currentLanguage],
-                demosContent: siteContent.projects.demosContent[currentLanguage],
-                demos: siteContent.projects.demos.map(demo => ({
-                    ...demo,
-                    title: demo.title[currentLanguage],
-                    description: demo.description[currentLanguage],
-                    demoButtonText: demo.demoButtonText[currentLanguage],
-                }))
-            }
-        })
+        setContent(getContent(siteContent, currentLanguage))
     }, [currentLanguage])
-
 
     return (
         <ContentContext.Provider value={{

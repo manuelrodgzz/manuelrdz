@@ -11,7 +11,7 @@ const Navbar = () => {
     const nav = () => (
         <div className='relative w-full md:h-24 md:bg-blue-900 md:rounded-b-full justify-center items-center md:shadow-lg'>
             <div className='hidden md:flex h-full justify-center items-center'>
-                <PagesList ulClassName='flex space-x-10 text-xl'/>
+                <PagesList ulClassName='flex space-x-10 text-xl' liClassName='hover:text-white transition' activeClassName='text-white'/>
                 <LanguageSelector />
             </div>
 

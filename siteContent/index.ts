@@ -1,4 +1,4 @@
-import { SiteContentMap } from '../interfaces';
+import { SiteContentMap } from '../types';
 
 const siteContent: SiteContentMap = {
     nav: {
@@ -15,6 +15,13 @@ const siteContent: SiteContentMap = {
                 english: 'Projects'
             },
             path: '/projects'
+        },
+        resume: {
+            text: {
+                spanish: 'Currículum',
+                english: 'Resume'
+            },
+            path: '/resume'
         }
     },
     index: {
@@ -104,6 +111,20 @@ const siteContent: SiteContentMap = {
                 liveDemoUrl: 'https://manuelrdz-chat-react.web.app/'
             }
         ]
+    },
+    resume: {
+        title: {
+            spanish: 'Currículum',
+            english: 'Resume'
+        },
+        downloadButton: {
+            spanish: 'Descargar currículum',
+            english: 'Download resume'
+        },
+        resumeButton: {
+            spanish: 'Abrir currículum en una pestaña nueva',
+            english: 'Open resume in a new tab'
+        }
     }
 }
 
