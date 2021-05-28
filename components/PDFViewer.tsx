@@ -9,23 +9,26 @@ const PDFViewer = () => {
 
     const [numPages, setNumPages] = useState(null)
     const [pageNumber, setPageNumber] = useState(1)
-
     const {content: {resume} ,currentLanguage} = useContext(ContentContext)
+
+    const fileName = `manuel-rodriguez-${currentLanguage === 'spanish' ? 'cv' : 'resume'}.pdf`
 
     const onDocumentLoadSuccess = ({numPages}: any) => {
         setNumPages(numPages)
     }
 
-    const pdfPath = `/manuel-rodriguez-${currentLanguage === 'spanish' ? 'cv' : 'resume'}.pdf`
+    const DownloadButton = () => (
+        <Button text={resume.downloadButton} href={'/' + fileName} download={fileName} className='mb-5' icon={faFileDownload}/>
+    )
 
     return (
         <>
             <div className='hidden md:flex flex-col items-center p-5'>
 
-                <Button text={resume.downloadButton} href={pdfPath} className='mb-5' icon={faFileDownload}/>
+                <DownloadButton />
 
                 <Document 
-                    file={pdfPath}
+                    file={'/' + fileName}
                     onLoadSuccess={onDocumentLoadSuccess}
                     className=''
                 >
@@ -37,8 +40,9 @@ const PDFViewer = () => {
                 </div>
             </div>
 
-            <div className='md:hidden flex justify-center'>
-                <Button text={resume.resumeButton} href={pdfPath} className='mt-5'/>
+            <div className='md:hidden flex flex-col items-center'>
+                <Button text={resume.resumeButton} href={'/' + fileName} className='my-5'/>
+                <DownloadButton />
             </div>
         </>
     )
