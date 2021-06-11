@@ -15,24 +15,20 @@ const Navbar = () => {
                 <LanguageSelector />
             </div>
 
+            {/* Mobile Menu Button */}
             <div className='md:hidden fixed flex right-5 top-10 bg-blue-900 rounded-full shadow-lg h-10 w-10 justify-center items-center z-20' onClick={() => setShowSidebar(!showSidebar)}>
                 <FontAwesomeIcon icon={faBars}/>
             </div>
 
-
+            {/* Mobile dark background */}
             <div className={`justify-end md:hidden fixed sidebar-background ${showSidebar ? 'flex bg-black opacity-25' : 'hidden'} shadow-lg h-full w-screen h-screen z-10`} onClick={() => setShowSidebar(false)}>
             </div>
-            {/* Sidebar working wihout black backgrund */}
+
+            {/* Sidebar */}
             <div className={`inline-block md:hidden fixed bg-blue-900 shadow-lg h-full w-3/4 pt-20 h-screen left-full ml-1/4 sidebar ${showSidebar && 'show'} z-10`}>
                 <PagesList liClassName='text-center mt-2'/>
                 <LanguageSelector />
             </div>
-
-            {/* This only works inside of sidebar background div */}
-            {/* <div className={`absolute bg-blue-900 h-full w-3/4 pt-20 sidebar ${showSidebar && 'show2'} left-full ml-1/4`} onClick={(e) => e.stopPropagation()}>
-                <PagesList liClassName='text-center mt-2'/>
-                <LanguageSelector />
-            </div> */}
         </div>
     )
  
