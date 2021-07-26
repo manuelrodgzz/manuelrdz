@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faReact, faNodeJs, faHtml5, faCss3, faJsSquare } from '@fortawesome/free-brands-svg-icons'
+import {faReact, faNodeJs, faHtml5, faCss3, faJsSquare, faSass } from '@fortawesome/free-brands-svg-icons'
 
 //Ignoring icons
 //@ts-ignore
@@ -41,6 +41,10 @@ const technologies = [
     {
         component: <FontAwesomeIcon icon={faNodeJs} className={`text-5xl ${colors.Node}`}/>,
         text: 'Node JS'
+    },
+    {
+        component: <FontAwesomeIcon icon={faSass} className={`text-5xl ${colors.SASS}`}/>,
+        text: 'Sass'
     },
     {
         component: <IconSQL />,

@@ -71,7 +71,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const gitRes = await axios.get<StarredRepo[]>('https://api.github.com/users/manuelrodgzz/starred', requestConfig)
 
-  const repos = gitRes.data.filter(repo => repo.owner.login === 'manuelrodgzz').reverse()
+  const repos = gitRes.data.filter(repo => repo.owner.login === 'manuelrodgzz')
 
   const repoLanguagePromises = repos.map(repo => axios.get<RepoLanguages>(repo.languages_url, requestConfig))
   const repoLanguageResponses = await Promise.allSettled(repoLanguagePromises)

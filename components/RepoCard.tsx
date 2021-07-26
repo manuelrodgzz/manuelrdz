@@ -1,7 +1,9 @@
 import React from 'react'
 import { StarredRepo } from '../interfaces'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faGithub, faJsSquare, faCss3, faHtml5, faReact, faNodeJs} from '@fortawesome/free-brands-svg-icons'
+import {faGithub, faJsSquare, faCss3, faHtml5, faReact, faNodeJs, faSass} from '@fortawesome/free-brands-svg-icons'
+//@ts-ignore
+import IconTs from '../assets/icons8-typescript.svg'
 import { RepoLanguages } from '../types/index';
 import colors from '../utils/colors'
 import Button from './Button';
@@ -16,12 +18,17 @@ const icons = {
     HTML: {icon: faHtml5, color: colors.HTML},
     CSS: {icon: faCss3, color: colors.CSS},
     React: {icon: faReact, color: colors.React},
+    SCSS: {icon: faSass, color: colors.SCSS},
+    SASS: {icon: faSass, color: colors.SASS},
+    TypeScript: {component: IconTs},
     Node: {icon: faNodeJs, color: colors.Node}
 }
 
 const RepoCard = ({repo, languages}: Props) => {
 
-    
+    /* Github can not detect frameworks as node and react, this ones have to
+        be detected manually by reading repo description
+    */
     const renderFrameworkIcon = () => {
 
         const descriptionArray = repo?.description?.toLowerCase().split(' ')
@@ -55,10 +62,25 @@ const RepoCard = ({repo, languages}: Props) => {
                 </div>
                 <div className='flex items-center justify-center sm:justify-end sm:w-3/4'>
                     {
-                        Object.keys(languages).map(language => (
-                            //@ts-ignore                        
-                            <FontAwesomeIcon key={'repocard-icon' + repo.id + language} icon={icons[language].icon} className={`${icons[language].color} text-3xl mr-3`}/>
-                        ))
+                        Object.keys(languages).map((language: string) => {
+                            
+                            const commonProps = {
+                                //@ts-ignore
+                                className: `${icons[language].color} text-3xl mr-3`,
+                                key: 'repocard-icon' + repo.id + language
+                            }
+
+                            //@ts-ignore
+                            if(icons[language].icon) {
+                                //@ts-ignore
+                                return <FontAwesomeIcon {...commonProps} icon={icons[language].icon} className={`${icons[language].color} text-3xl mr-3`}/>
+                            }
+                            else {
+                                //@ts-ignore
+                                const Component = icons[language].component
+                                return <Component {...commonProps} key={'repocard-icon' + repo.id + language}/>
+                            }
+                        })
                     }
 
                     {
