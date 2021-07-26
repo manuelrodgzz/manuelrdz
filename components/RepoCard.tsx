@@ -30,8 +30,7 @@ const RepoCard = ({repo, languages}: Props) => {
         be detected manually by reading repo description
     */
     const renderFrameworkIcon = () => {
-
-        const descriptionArray = repo?.description?.toLowerCase().split(' ')
+        const descriptionArray = repo?.description?.toLowerCase().replace(/\.|\,/g, '').split(' ')
         
         if(descriptionArray?.includes('node'))
             return <FontAwesomeIcon icon={icons.Node.icon} className={`${icons.Node.color} text-3xl mr-3`}/>
