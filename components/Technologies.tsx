@@ -8,7 +8,7 @@ import IconTs from '../assets/icons8-typescript.svg'
 //@ts-ignore
 import IconGraphQL from '../assets/icons8-graphql.svg'
 //@ts-ignore
-import IconCSharp from '../assets/icons8-c-sharp-logo.svg'
+import IconGatsbyJs from '../assets/icons8-gatsbyjs.svg'
 //@ts-ignore
 import IconSQL from '../assets/icons8-microsoft-sql-server.svg'
 import colors from '../utils/colors'
@@ -35,6 +35,10 @@ const technologies = [
         text: 'React'
     },
     {
+        component: <IconGatsbyJs />,
+        text: 'Gatsby JS'
+    },
+    {
         component: <IconGraphQL />,
         text: 'GraphQL'
     },
@@ -49,11 +53,7 @@ const technologies = [
     {
         component: <IconSQL />,
         text: 'SQL Server'
-    },
-    {
-        component: <IconCSharp/>,
-        text: 'C#'
-    },
+    }
 ]
 
 const Technologies = () => {

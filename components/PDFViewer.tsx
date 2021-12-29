@@ -11,7 +11,7 @@ const PDFViewer = () => {
     const [pageNumber, setPageNumber] = useState(1)
     const {content: {resume} ,currentLanguage} = useContext(ContentContext)
 
-    const fileName = `manuel-rodriguez-${currentLanguage === 'spanish' ? 'cv' : 'resume'}.pdf`
+    const fileName = `Manuel Rodriguez ${currentLanguage === 'spanish' ? 'CV' : 'Resume'}.pdf`
 
     const onDocumentLoadSuccess = ({numPages}: any) => {
         setNumPages(numPages)

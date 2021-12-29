@@ -11,10 +11,10 @@ const Me = () => {
                 {/* Blue ring with opacity */}
                 <div className=' mx-auto mb-2 h-48 w-48 lg:h-72 lg:w-72 rounded-full mx-auto flex bg-blue-900'>
                     {/* Blue ring without opacity */}
-                    <div className='mx-auto h-40 w-40 lg:h-64 lg:w-64 rounded-full mx-auto flex bg-blue-800 m-auto'>
+                    <div className='mx-auto h-40 w-40 lg:h-64 lg:w-64 rounded-full mx-auto flex bg-blue-800 m-auto overflow-hidden'>
                         {/* Image container */}
-                        <div className='relative h-32 w-32 lg:h-56 lg:w-56 m-auto'>
-                            <img src='/img/me.jpeg' alt='me' className='rounded-full'/>
+                        <div className='relative h-32 w-32 lg:h-56 lg:w-56 m-auto overflow-hidden rounded-full'>
+                                <img src='/img/me.jpg' alt='me' className='rounded-full transform -translate-y-4'/>
                         </div>
                     </div>
                 </div>
