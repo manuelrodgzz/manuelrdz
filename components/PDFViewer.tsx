@@ -3,6 +3,7 @@ import { Document, Page, pdfjs } from "react-pdf"
 import { ContentContext } from "../context/SiteContent"
 import Button from "./Button";
 import { faFileDownload } from '@fortawesome/free-solid-svg-icons'
+import useAnalytics from '../hooks/useAnalytics'
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const PDFViewer = () => {
@@ -10,6 +11,7 @@ const PDFViewer = () => {
     const [numPages, setNumPages] = useState(null)
     const [pageNumber, setPageNumber] = useState(1)
     const {content: {resume} ,currentLanguage} = useContext(ContentContext)
+    const { logEvent } = useAnalytics()
 
     const fileName = `Manuel Rodriguez ${currentLanguage === 'spanish' ? 'CV' : 'Resume'}.pdf`
 
@@ -18,7 +20,14 @@ const PDFViewer = () => {
     }
 
     const DownloadButton = () => (
-        <Button text={resume.downloadButton} href={'/' + fileName} download={fileName} className='mb-5' icon={faFileDownload}/>
+        <Button
+            text={resume.downloadButton}
+            href={'/' + fileName}
+            download={fileName}
+            className='mb-5'
+            icon={faFileDownload}
+            onClick={ () => logEvent('resume_download', { language: currentLanguage }) }
+        />
     )
 
     return (

@@ -4,29 +4,16 @@ import SiteContentProvider from '../context/SiteContent'
 import { useEffect } from 'react'
 import {analytics} from '../utils/analytics'
 import {useRouter} from 'next/router'
+import useAnalytics from '../hooks/useAnalytics'
 
 function MyApp({ Component, pageProps }) {
 
-  const routers = useRouter()
+  const router = useRouter()
+  const { logEvent } = useAnalytics()
 
   useEffect(() => {
-    if(process.env.NODE_ENV === 'production'){
-      const logEvent = (url) => {
-        analytics().setCurrentScreen(url);
-        analytics().logEvent('screen_view');
-      };
-
-      routers.events.on('routeChangeComplete', logEvent);
-      
-      //For First Page
-      logEvent(window.location.pathname);
-
-      //Remvove Event Listener after un-mount
-      return () => {
-        routers.events.off('routeChangeComplete', logEvent);
-      };
-    }
-  }, [])
+    logEvent('screen_view')
+  }, [ router.pathname ])
 
   return (
     <SiteContentProvider>
