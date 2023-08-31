@@ -106,7 +106,7 @@ const siteContent: SiteContentMap = {
                     spanish: 'Probar demo',
                     english: 'Live demo'
                 },
-                liveDemoUrl: 'https://manuelrdz-buscaminas.web.app/'
+                liveDemoUrl: 'https://manuelrdz-buscaminas-rea-739a1.web.app/'
             },
         ]
     },
