@@ -60,6 +60,22 @@ const siteContent: SiteContentMap = {
         demos: [
             {
                 title: {
+                    spanish: 'Clon de instagram',
+                    english: 'Instagram clone'
+                },
+                description: {
+                    spanish: 'Clon de la pagina inicial de Instagram que permite hacer scroll a través de los diferentes posts y stories.',
+                    english: "Clone of Instagram's home page where you can scroll through the different posts and stories."
+                },
+                imageUrl: '/img/ig-clone.png',
+                demoButtonText: {
+                    spanish: 'Probar demo',
+                    english: 'Live demo'
+                },
+                liveDemoUrl: 'https://ig-clone-manuelrdz.web.app/'
+            },
+            {
+                title: {
                     spanish: 'Clon de Tiktok',
                     english: 'Tiktok Clone'
                 },
@@ -94,22 +110,6 @@ const siteContent: SiteContentMap = {
                 },
                 liveDemoUrl: 'https://manuelrdz-buscaminas.web.app/'
             },
-            {
-                title: {
-                    spanish: 'Sala de chat',
-                    english: 'Chat room'
-                },
-                description: {
-                    spanish: 'Una sala de chat en la que varios participantes se pueden unir para compartir mensajes de manera instantánea.',
-                    english: 'A chat room where you can share instant messages with multiple users'
-                },
-                imageUrl: '/img/chat.png',
-                demoButtonText: {
-                    spanish: 'Probar demo',
-                    english: 'Live demo'
-                },
-                liveDemoUrl: 'https://manuelrdz-chat-react.web.app/'
-            }
         ]
     },
     resume: {
