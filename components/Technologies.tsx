@@ -11,6 +11,10 @@ import IconGraphQL from '../assets/icons8-graphql.svg'
 import IconGatsbyJs from '../assets/icons8-gatsbyjs.svg'
 //@ts-ignore
 import IconSQL from '../assets/icons8-microsoft-sql-server.svg'
+//@ts-ignore
+import IconNextJs from '../assets/nextjs.svg'
+//@ts-ignore
+import IconStyledComponents from '../assets/styled.svg'
 import colors from '../utils/colors'
 
 const technologies = [
@@ -39,6 +43,10 @@ const technologies = [
         text: 'Gatsby JS'
     },
     {
+        component: <IconNextJs />,
+        text: 'Next JS'
+    },
+    {
         component: <IconGraphQL />,
         text: 'GraphQL'
     },
@@ -49,6 +57,10 @@ const technologies = [
     {
         component: <FontAwesomeIcon icon={faSass} className={`text-5xl ${colors.SASS}`}/>,
         text: 'Sass'
+    },
+    {
+        component: <IconStyledComponents/>,
+        text: 'Styled Components'
     },
     {
         component: <IconSQL />,
