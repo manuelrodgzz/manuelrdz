@@ -58,8 +58,8 @@ const siteContent: SiteContentMap = {
         demos: [
             {
                 title: {
-                    spanish: 'Clon de instagram',
-                    english: 'Instagram clone'
+                    spanish: 'Clon de instagram (2021)',
+                    english: 'Instagram clone (2021)'
                 },
                 description: {
                     spanish: 'Clon de la pagina inicial de Instagram que permite hacer scroll a través de los diferentes posts y stories.',
@@ -74,8 +74,8 @@ const siteContent: SiteContentMap = {
             },
             {
                 title: {
-                    spanish: 'Clon de Tiktok',
-                    english: 'Tiktok Clone'
+                    spanish: 'Clon de Tiktok (2020)',
+                    english: 'Tiktok Clone (2020)'
                 },
                 description: {
                     spanish: 'Aplicación con interfaz gráfica similar a tiktok y que permite deslizar entre videos, pausar y silenciar el video.',
@@ -90,8 +90,8 @@ const siteContent: SiteContentMap = {
             },
             {
                 title: {
-                    spanish: 'Buscaminas',
-                    english: 'Minesweeper'
+                    spanish: 'Buscaminas (2020)',
+                    english: 'Minesweeper (2020)'
                 },
                 description: {
                     spanish: `El clásico juego de buscaminas.
